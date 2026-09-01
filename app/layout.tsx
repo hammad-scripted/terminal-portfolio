@@ -1,15 +1,17 @@
 import type { Metadata } from 'next';
-import { JetBrains_Mono, Manrope } from 'next/font/google';
+import { IBM_Plex_Mono, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Manrope({
+const geistSans = Space_Grotesk({
   variable: '--font-geist-sans',
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
 });
 
-const geistMono = JetBrains_Mono({
+const geistMono = IBM_Plex_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {

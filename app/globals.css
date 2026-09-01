@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
 :root {
-  --font-geist-mono: "JetBrains Mono", Consolas, monospace;
-  --font-geist-sans: "Manrope", Arial, sans-serif;
+  --font-geist-mono: "IBM Plex Mono", Consolas, monospace;
+  --font-geist-sans: "Space Grotesk", Arial, sans-serif;
   --bg: #05060b;
   --panel: #090a12;
   --panel-2: #0e101a;

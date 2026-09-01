@@ -307,7 +307,7 @@ export default function Home() {
                 </a>
                 <a className="telemetry-card" href="https://leetcode.com/u/hammad_codes/" target="_blank" rel="noreferrer">
                   <div className="telemetry-title"><span>LEETCODE / SOLVING STREAK</span><b>LIVE ↗</b></div>
-                  <img src="https://leetcard.jacoblin.cool/hammad_codes?theme=dark&font=JetBrains%20Mono&ext=heatmap" alt="Hammad's live LeetCode statistics and heatmap" loading="lazy" />
+                  <img src="https://leetcard.jacoblin.cool/hammad_codes?theme=dark&font=IBM%20Plex%20Mono&ext=heatmap" alt="Hammad's live LeetCode statistics and heatmap" loading="lazy" />
                 </a>
               </div>
               <a className="activity-graph" href="https://github.com/hammad-scripted" target="_blank" rel="noreferrer">
