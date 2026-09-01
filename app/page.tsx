@@ -1,9 +1,11 @@
 "use client";
 /* eslint-disable @next/next/no-img-element -- plain images keep this component portable to the static Vite Pages build. */
 
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 
 const commands = ["help", "about", "stack", "projects", "github", "leetcode", "resume", "contact", "theme", "clear"];
+const themes = ["black", "brown", "violet", "light"] as const;
+type ThemeName = (typeof themes)[number];
 
 const stackGroups = [
   { label: "frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
@@ -79,8 +81,19 @@ export default function Home() {
   const [history, setHistory] = useState<HistoryItem[]>([
     { command: "whoami", response: "Mohammad Hammad Ansari — Full Stack Developer & System Engineer" },
   ]);
-  const [amber, setAmber] = useState(false);
+  const [theme, setTheme] = useState<ThemeName>("black");
+  const [pointer, setPointer] = useState({ x: -100, y: -100 });
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem("hammad-portfolio-theme") as ThemeName | null;
+    if (saved && themes.includes(saved)) setTheme(saved);
+  }, []);
+
+  const selectTheme = (nextTheme: ThemeName) => {
+    setTheme(nextTheme);
+    window.localStorage.setItem("hammad-portfolio-theme", nextTheme);
+  };
 
   const runCommand = (rawCommand: string) => {
     const command = rawCommand.trim().toLowerCase();
@@ -92,7 +105,10 @@ export default function Home() {
       return;
     }
 
-    if (command === "theme") setAmber((value) => !value);
+    if (command === "theme") {
+      const nextTheme = themes[(themes.indexOf(theme) + 1) % themes.length];
+      selectTheme(nextTheme);
+    }
 
     const targets: Record<string, string> = {
       about: "about",
@@ -113,7 +129,9 @@ export default function Home() {
       ...items.slice(-3),
       {
         command,
-        response: commandCopy[command] ?? `command not found: ${command}. Type “help” for available commands.`,
+        response: command === "theme"
+          ? `Display profile set to ${themes[(themes.indexOf(theme) + 1) % themes.length]}.`
+          : commandCopy[command] ?? `command not found: ${command}. Type “help” for available commands.`,
       },
     ]);
     setInput("");
@@ -125,8 +143,13 @@ export default function Home() {
   };
 
   return (
-    <main className={`portfolio-shell ${amber ? "amber-mode" : ""}`}>
+    <main
+      className={`portfolio-shell theme-${theme}`}
+      onPointerMove={(event) => setPointer({ x: event.clientX, y: event.clientY })}
+      onPointerLeave={() => setPointer({ x: -100, y: -100 })}
+    >
       <div className="grid-field" aria-hidden="true" />
+      <div className="pointer-trail" style={{ transform: `translate3d(${pointer.x}px, ${pointer.y}px, 0)` }} aria-hidden="true"><span /></div>
       <section className="terminal-window" aria-label="Hammad's developer portfolio terminal">
         <header className="terminal-chrome">
           <div className="window-controls" aria-hidden="true">
@@ -136,7 +159,9 @@ export default function Home() {
           </div>
           <p>hammad@portfolio: ~</p>
           <div className="chrome-actions">
-            <button type="button" onClick={() => setAmber((value) => !value)} aria-label="Toggle terminal color theme">THEME</button>
+            <div className="theme-switcher" role="group" aria-label="Choose color theme">
+              {themes.map((option) => <button type="button" className={theme === option ? "active" : ""} key={option} onClick={() => selectTheme(option)} aria-label={`Use ${option} theme`} title={`${option} theme`}><span />{option}</button>)}
+            </div>
             <span className="session-status">● ONLINE</span>
           </div>
         </header>
