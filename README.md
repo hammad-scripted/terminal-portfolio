@@ -5,7 +5,7 @@ A responsive, interactive terminal-style developer portfolio built with Next.js,
 ## Highlights
 
 - Interactive commands: `help`, `about`, `stack`, `projects`, `github`, `leetcode`, `resume`, `contact`, `theme`, and `clear`
-- Responsive CRT-inspired terminal interface with green and amber display modes
+- Responsive terminal interface with graphite, cyan, periwinkle, and amber display modes
 - Career, stack, selected projects, live coding activity, résumé, and contact sections
 - GitHub contribution streak and activity graph for `hammad-scripted`
 - LeetCode stats and heatmap for `hammad_codes`

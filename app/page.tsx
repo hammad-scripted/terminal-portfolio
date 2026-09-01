@@ -279,7 +279,7 @@ export default function Home() {
               <div className="telemetry-grid">
                 <a className="telemetry-card" href="https://github.com/hammad-scripted" target="_blank" rel="noreferrer">
                   <div className="telemetry-title"><span>GITHUB / CONTRIBUTION STREAK</span><b>LIVE ↗</b></div>
-                  <img src="https://streak-stats.demolab.com?user=hammad-scripted&hide_border=true&background=071009&ring=75F29A&fire=C7FF4A&currStreakLabel=75F29A&sideLabels=9AB3A1&dates=607566&currStreakNum=ECFFF1&sideNums=ECFFF1" alt="Hammad's live GitHub contribution streak" loading="lazy" />
+                  <img src="https://streak-stats.demolab.com?user=hammad-scripted&hide_border=true&background=090A12&ring=67E8F9&fire=A78BFA&currStreakLabel=67E8F9&sideLabels=A2AABD&dates=5E6678&currStreakNum=F4F7FF&sideNums=F4F7FF" alt="Hammad's live GitHub contribution streak" loading="lazy" />
                 </a>
                 <a className="telemetry-card" href="https://leetcode.com/u/hammad_codes/" target="_blank" rel="noreferrer">
                   <div className="telemetry-title"><span>LEETCODE / SOLVING STREAK</span><b>LIVE ↗</b></div>
@@ -287,7 +287,7 @@ export default function Home() {
                 </a>
               </div>
               <a className="activity-graph" href="https://github.com/hammad-scripted" target="_blank" rel="noreferrer">
-                <img src="https://github-readme-activity-graph.vercel.app/graph?username=hammad-scripted&bg_color=071009&color=75f29a&line=c7ff4a&point=ecfff1&area=true&area_color=183920&hide_border=true" alt="Hammad's GitHub contribution activity graph" loading="lazy" />
+                <img src="https://github-readme-activity-graph.vercel.app/graph?username=hammad-scripted&bg_color=090a12&color=67e8f9&line=a78bfa&point=f4f7ff&area=true&area_color=24213a&hide_border=true" alt="Hammad's GitHub contribution activity graph" loading="lazy" />
               </a>
               <p className="sync-note"><span /> Remote telemetry cards refresh from GitHub and LeetCode services.</p>
             </section>
