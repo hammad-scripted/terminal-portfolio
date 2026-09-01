@@ -395,6 +395,10 @@ h1 em, .contact-section h2 em { color: var(--green); font-style: normal; text-sh
   .terminal-window { border-radius: 11px; }
   .terminal-chrome { grid-template-columns: 1fr auto; }
   .terminal-chrome > p { display: none; }
+  .chrome-actions { gap: 6px; }
+  .theme-switcher { gap: 2px; }
+  .theme-switcher button { padding: 5px 4px; font-size: 7px; }
+  .session-status { display: none; }
   .terminal-layout { display: block; }
   .terminal-sidebar { min-height: 0; position: static; flex-direction: row; align-items: center; padding: 11px 14px; border-right: 0; border-bottom: 1px solid var(--line); overflow-x: auto; }
   .sidebar-brand { flex: 0 0 auto; }
