@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
 :root {
-  --font-geist-mono: "IBM Plex Mono", Consolas, monospace;
-  --font-geist-sans: "Space Grotesk", Arial, sans-serif;
+  --font-geist-mono: "DM Mono", Consolas, monospace;
+  --font-geist-sans: "Plus Jakarta Sans", Arial, sans-serif;
   --bg: #05060b;
   --panel: #090a12;
   --panel-2: #0e101a;
@@ -303,6 +303,21 @@ h1 em, .contact-section h2 em { color: var(--green); font-style: normal; text-sh
 .site-footer { display: flex; justify-content: space-between; gap: 18px; padding: 19px clamp(28px, 7vw, 96px); border-top: 1px solid var(--line); color: var(--faint); font-size: 7px; letter-spacing: .08em; }
 .site-footer a { color: var(--green); text-decoration: none; }
 .ambient-label { position: fixed; z-index: 1; color: rgba(103,232,249,.24); font-size: 7px; letter-spacing: .18em; writing-mode: vertical-rl; }
+
+/* Readability scale: keep the terminal feel while giving prose and supporting labels room to breathe. */
+.command-response { font-size: 12px; }
+.boot-line, .prompt-line { font-size: 12px; }
+.section-header p { font-size: 12px; }
+.prose-panel > p { font-size: 17px; }
+.timeline-panel p { font-size: 11px; }
+.stack-card li { font-size: 11px; }
+.project-copy > p { font-size: 15px; }
+.resume-file > div > span, .resume-panel > p { font-size: 11px; }
+.contact-section > p:not(.prompt-line) { font-size: 18px; }
+.sidebar-meta, .sidebar-meta span { font-size: 10px; }
+.theme-light .intro-copy, .theme-light .prose-panel > p, .theme-light .project-copy > p, .theme-light .resume-panel > p, .theme-light .contact-section > p:not(.prompt-line) { color: #343943; }
+.theme-light .command-response, .theme-light .timeline-panel p, .theme-light .stack-card li, .theme-light .resume-file > div > span { color: #444952; }
+.theme-light .faint, .theme-light .section-header > span, .theme-light .identity-top, .theme-light .sidebar-meta, .theme-light .site-footer { color: #59606c; }
 .label-left { left: 6px; bottom: 30px; transform: rotate(180deg); }
 .label-right { right: 6px; top: 30px; }
 

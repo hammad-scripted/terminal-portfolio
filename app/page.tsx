@@ -307,11 +307,11 @@ export default function Home() {
                 </a>
                 <a className="telemetry-card" href="https://leetcode.com/u/hammad_codes/" target="_blank" rel="noreferrer">
                   <div className="telemetry-title"><span>LEETCODE / SOLVING STREAK</span><b>LIVE ↗</b></div>
-                  <img src="https://leetcard.jacoblin.cool/hammad_codes?theme=dark&font=IBM%20Plex%20Mono&ext=heatmap" alt="Hammad's live LeetCode statistics and heatmap" loading="lazy" />
+                  <img src="https://leetcard.jacoblin.cool/hammad_codes?theme=dark&font=DM%20Mono&ext=heatmap" alt="Hammad's live LeetCode statistics and heatmap" loading="lazy" />
                 </a>
               </div>
               <a className="activity-graph" href="https://github.com/hammad-scripted" target="_blank" rel="noreferrer">
-                <img src="https://github-readme-activity-graph.vercel.app/graph?username=hammad-scripted&bg_color=090a12&color=67e8f9&line=a78bfa&point=f4f7ff&area=true&area_color=24213a&hide_border=true" alt="Hammad's GitHub contribution activity graph" loading="lazy" />
+                <img src="https://ghchart.rshah.org/67e8f9/hammad-scripted" alt="Hammad's GitHub contribution calendar" loading="lazy" />
               </a>
               <p className="sync-note"><span /> Remote telemetry cards refresh from GitHub and LeetCode services.</p>
             </section>

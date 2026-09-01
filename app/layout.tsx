@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
-import { IBM_Plex_Mono, Space_Grotesk } from 'next/font/google';
+import { DM_Mono, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Space_Grotesk({
+const geistSans = Plus_Jakarta_Sans({
   variable: '--font-geist-sans',
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
 });
 
-const geistMono = IBM_Plex_Mono({
+const geistMono = DM_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500'],
 });
 
 export const metadata: Metadata = {
