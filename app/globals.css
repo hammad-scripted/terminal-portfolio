@@ -418,7 +418,8 @@ h1 em, .contact-section h2 em { color: var(--green); font-style: normal; text-sh
   .terminal-sidebar nav button span, .sidebar-meta { display: none; }
   .hero { min-height: auto; padding: 47px 24px 62px; }
   .identity-card { max-width: 100%; display: grid; grid-template-columns: 1fr; }
-  .identity-scan { grid-row: auto; aspect-ratio: 4 / 5; }
+  .identity-scan { grid-row: auto; aspect-ratio: auto; height: auto; }
+  .identity-scan img { display: block; height: auto; max-height: none; object-fit: contain; object-position: center top; }
   .identity-card h2, .identity-card > p, .identity-card dl, .identity-card > a, .identity-top { grid-column: 1; }
   .content-section, .contact-section { padding-inline: 24px; }
   .about-grid, .resume-panel { grid-template-columns: 1fr; }
