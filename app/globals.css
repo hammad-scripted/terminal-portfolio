@@ -320,6 +320,17 @@ h1 em, .contact-section h2 em { color: var(--green); font-style: normal; text-sh
 .resume-file > div > span, .resume-panel > p { font-size: 11px; }
 .contact-section > p:not(.prompt-line) { font-size: 18px; }
 .sidebar-meta, .sidebar-meta span { font-size: 10px; }
+.terminal-sidebar nav button { font-size: 13px; }
+.terminal-sidebar nav button span { font-size: 9px; }
+.sidebar-brand small { font-size: 10px; }
+.identity-card > p { font-size: 12px; }
+.identity-card dd { font-size: 10px; }
+.stack-card h3, .timeline-panel h3 { font-size: 19px; }
+.project-links a { font-size: 10px; }
+.project-tags span { font-size: 9px; }
+.telemetry-title { font-size: 9px; }
+.sync-note { font-size: 9px; }
+.site-footer { font-size: 9px; }
 .theme-light .intro-copy, .theme-light .prose-panel > p, .theme-light .project-copy > p, .theme-light .resume-panel > p, .theme-light .contact-section > p:not(.prompt-line) { color: #343943; }
 .theme-light .command-response, .theme-light .timeline-panel p, .theme-light .stack-card li, .theme-light .resume-file > div > span { color: #444952; }
 .theme-light .faint, .theme-light .section-header > span, .theme-light .identity-top, .theme-light .sidebar-meta, .theme-light .site-footer { color: #59606c; }
