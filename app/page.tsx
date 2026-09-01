@@ -174,6 +174,17 @@ export default function Home() {
           </div>
         </header>
 
+        {windowState === "minimized" && (
+          <div className="window-fallback" role="status">
+            <span className="window-fallback-dot" />
+            <div>
+              <strong>portfolio_os minimized</strong>
+              <p>Your session is paused. Restore the terminal window to continue.</p>
+            </div>
+            <button type="button" onClick={() => setWindowState("open")}>restore ↗</button>
+          </div>
+        )}
+
         <div className="terminal-layout">
           <aside className="terminal-sidebar" aria-label="Quick commands">
             <a className="sidebar-brand" href="#top" aria-label="Back to top"><span>HA</span><small>PORTFOLIO_OS</small></a>
