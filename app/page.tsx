@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element -- plain images keep this component portable to the static Vite Pages build. */
 
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 
 const commands = ["help", "about", "stack", "projects", "github", "leetcode", "resume", "contact", "theme", "clear"];
 const themes = ["black", "brown", "violet", "light"] as const;
@@ -81,14 +81,13 @@ export default function Home() {
   const [history, setHistory] = useState<HistoryItem[]>([
     { command: "whoami", response: "Mohammad Hammad Ansari — Full Stack Developer & System Engineer" },
   ]);
-  const [theme, setTheme] = useState<ThemeName>("black");
+  const [theme, setTheme] = useState<ThemeName>(() => {
+    if (typeof window === "undefined") return "black";
+    const saved = window.localStorage.getItem("hammad-portfolio-theme") as ThemeName | null;
+    return saved && themes.includes(saved) ? saved : "black";
+  });
   const [pointer, setPointer] = useState({ x: -100, y: -100 });
   const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    const saved = window.localStorage.getItem("hammad-portfolio-theme") as ThemeName | null;
-    if (saved && themes.includes(saved)) setTheme(saved);
-  }, []);
 
   const selectTheme = (nextTheme: ThemeName) => {
     setTheme(nextTheme);
@@ -226,7 +225,7 @@ export default function Home() {
               </div>
 
               <aside className="identity-card">
-                <div className="identity-scan"><img src="./hammad-image.jpeg" alt="Mohammad Hammad Ansari" /></div>
+                <div className="identity-scan"><img src="./formal-portrait.png" alt="Mohammad Hammad Ansari in a black suit" /></div>
                 <div className="identity-top"><span>ID: HA-2026</span><span>VERIFIED ✓</span></div>
                 <h2>Hammad Ansari</h2>
                 <p>Full Stack Developer</p>
@@ -308,7 +307,7 @@ export default function Home() {
                 </a>
                 <a className="telemetry-card" href="https://leetcode.com/u/hammad_codes/" target="_blank" rel="noreferrer">
                   <div className="telemetry-title"><span>LEETCODE / SOLVING STREAK</span><b>LIVE ↗</b></div>
-                  <img src="https://leetcard.jacoblin.cool/hammad_codes?theme=dark&font=Fira%20Code&ext=heatmap" alt="Hammad's live LeetCode statistics and heatmap" loading="lazy" />
+                  <img src="https://leetcard.jacoblin.cool/hammad_codes?theme=dark&font=JetBrains%20Mono&ext=heatmap" alt="Hammad's live LeetCode statistics and heatmap" loading="lazy" />
                 </a>
               </div>
               <a className="activity-graph" href="https://github.com/hammad-scripted" target="_blank" rel="noreferrer">
