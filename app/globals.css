@@ -166,6 +166,7 @@ a { color: inherit; }
 .theme-switcher button:nth-child(3) { --dot: #c084fc; }
 .theme-switcher button:nth-child(4) { --dot: #f3f1ed; border-color: rgba(148,163,184,.38); }
 .theme-switcher button.active, .theme-switcher button:hover, .theme-switcher button:focus-visible { border-color: var(--line-strong); color: var(--ink); outline: none; }
+.mobile-theme-switcher { display: none; }
 .session-status { color: var(--green); font-size: 9px; letter-spacing: .15em; }
 
 .terminal-layout { display: grid; grid-template-columns: 210px minmax(0, 1fr); }
@@ -399,6 +400,15 @@ h1 em, .contact-section h2 em { color: var(--green); font-style: normal; text-sh
   .theme-switcher { gap: 2px; }
   .theme-switcher button { padding: 5px 4px; font-size: 7px; }
   .session-status { display: none; }
+  .mobile-theme-switcher { display: flex; align-items: center; gap: 5px; padding: 8px 14px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+  .mobile-theme-switcher > span { margin-right: 3px; color: var(--faint); font-size: 9px; text-transform: uppercase; letter-spacing: .12em; }
+  .mobile-theme-switcher button { display: inline-flex; align-items: center; gap: 5px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 5px; color: var(--muted); background: transparent; cursor: pointer; font-size: 9px; text-transform: uppercase; }
+  .mobile-theme-switcher button i { width: 7px; height: 7px; border-radius: 50%; background: var(--dot); }
+  .mobile-theme-switcher button:nth-child(2) { --dot: #67e8f9; }
+  .mobile-theme-switcher button:nth-child(3) { --dot: #ffb86b; }
+  .mobile-theme-switcher button:nth-child(4) { --dot: #c084fc; }
+  .mobile-theme-switcher button:nth-child(5) { --dot: #f3f1ed; }
+  .mobile-theme-switcher button.active, .mobile-theme-switcher button:focus-visible { color: var(--ink); border-color: var(--line-strong); outline: none; }
   .terminal-layout { display: block; }
   .terminal-sidebar { min-height: 0; position: static; flex-direction: row; align-items: center; padding: 11px 14px; border-right: 0; border-bottom: 1px solid var(--line); overflow-x: auto; }
   .sidebar-brand { flex: 0 0 auto; }

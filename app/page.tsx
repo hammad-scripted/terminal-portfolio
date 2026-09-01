@@ -174,6 +174,11 @@ export default function Home() {
           </div>
         </header>
 
+        <div className="mobile-theme-switcher" role="group" aria-label="Choose color theme">
+          <span>theme:</span>
+          {themes.map((option) => <button type="button" className={theme === option ? "active" : ""} key={`mobile-${option}`} onClick={() => selectTheme(option)}><i />{option}</button>)}
+        </div>
+
         {windowState === "minimized" && (
           <div className="window-fallback" role="status">
             <span className="window-fallback-dot" />
