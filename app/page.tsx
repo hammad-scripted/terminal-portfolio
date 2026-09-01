@@ -87,6 +87,7 @@ export default function Home() {
     return saved && themes.includes(saved) ? saved : "black";
   });
   const [pointer, setPointer] = useState({ x: -100, y: -100 });
+  const [windowState, setWindowState] = useState<"open" | "minimized" | "maximized" | "closed">("open");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const selectTheme = (nextTheme: ThemeName) => {
@@ -149,12 +150,13 @@ export default function Home() {
     >
       <div className="grid-field" aria-hidden="true" />
       <div className="pointer-trail" style={{ transform: `translate3d(${pointer.x}px, ${pointer.y}px, 0)` }} aria-hidden="true"><span /></div>
-      <section className="terminal-window" aria-label="Hammad's developer portfolio terminal">
+      {windowState === "closed" && <button className="reopen-terminal" type="button" onClick={() => setWindowState("open")}>$ reopen portfolio_os</button>}
+      <section className={`terminal-window window-${windowState}`} aria-label="Hammad's developer portfolio terminal">
         <header className="terminal-chrome">
-          <div className="window-controls" aria-hidden="true">
-            <span className="control-close" />
-            <span className="control-minimize" />
-            <span className="control-expand" />
+          <div className="window-controls" aria-label="Window controls">
+            <button className="control-close" type="button" aria-label="Close terminal" onClick={() => setWindowState("closed")} />
+            <button className="control-minimize" type="button" aria-label="Minimize terminal" onClick={() => setWindowState(windowState === "minimized" ? "open" : "minimized")} />
+            <button className="control-expand" type="button" aria-label="Expand terminal" onClick={() => setWindowState(windowState === "maximized" ? "open" : "maximized")} />
           </div>
           <p>hammad@portfolio: ~</p>
           <div className="chrome-actions">
@@ -303,7 +305,7 @@ export default function Home() {
               <div className="telemetry-grid">
                 <a className="telemetry-card" href="https://github.com/hammad-scripted" target="_blank" rel="noreferrer">
                   <div className="telemetry-title"><span>GITHUB / CONTRIBUTION STREAK</span><b>LIVE ↗</b></div>
-                  <img src="https://streak-stats.demolab.com?user=hammad-scripted&hide_border=true&background=090A12&ring=67E8F9&fire=A78BFA&currStreakLabel=67E8F9&sideLabels=A2AABD&dates=5E6678&currStreakNum=F4F7FF&sideNums=F4F7FF" alt="Hammad's live GitHub contribution streak" loading="lazy" />
+                  <img src="https://streak-stats.demolab.com?user=hammad-scripted&hide_border=true&background=090A12&ring=22C55E&fire=86EFAC&currStreakLabel=22C55E&sideLabels=A2AABD&dates=5E6678&currStreakNum=F4F7FF&sideNums=F4F7FF" alt="Hammad's live GitHub contribution streak" loading="lazy" />
                 </a>
                 <a className="telemetry-card" href="https://leetcode.com/u/hammad_codes/" target="_blank" rel="noreferrer">
                   <div className="telemetry-title"><span>LEETCODE / SOLVING STREAK</span><b>LIVE ↗</b></div>

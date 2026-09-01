@@ -138,10 +138,15 @@ a { color: inherit; }
 
 .terminal-chrome p { margin: 0; }
 .window-controls { display: flex; gap: 8px; }
-.window-controls span { width: 11px; height: 11px; border-radius: 50%; }
+.window-controls button { width: 11px; height: 11px; padding: 0; border: 0; border-radius: 50%; cursor: pointer; transition: transform .18s ease, filter .18s ease; }
+.window-controls button:hover, .window-controls button:focus-visible { transform: scale(1.35); filter: brightness(1.25); outline: none; }
 .control-close { background: #ff5f57; }
 .control-minimize { background: #febc2e; }
 .control-expand { background: #28c840; }
+.window-minimized .terminal-layout { display: none; }
+.window-closed { display: none; }
+.window-maximized { position: fixed; inset: 18px; width: auto; max-width: none; overflow: auto; z-index: 30; }
+.reopen-terminal { position: fixed; right: 24px; bottom: 24px; z-index: 40; padding: 12px 16px; border: 1px solid var(--line-strong); border-radius: 7px; color: var(--green); background: var(--panel); cursor: pointer; font-size: 12px; box-shadow: 0 12px 30px rgba(0,0,0,.35); }
 .chrome-actions { justify-self: end; display: flex; align-items: center; gap: 18px; }
 .theme-switcher { display: flex; align-items: center; gap: 4px; }
 .theme-switcher button { display: inline-flex; align-items: center; gap: 5px; padding: 4px 6px; border: 1px solid transparent; border-radius: 4px; background: transparent; color: var(--faint); cursor: pointer; font-size: 7px; letter-spacing: .08em; text-transform: uppercase; }
