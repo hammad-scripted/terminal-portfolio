@@ -150,7 +150,14 @@ export default function Home() {
     >
       <div className="grid-field" aria-hidden="true" />
       <div className="pointer-trail" style={{ transform: `translate3d(${pointer.x}px, ${pointer.y}px, 0)` }} aria-hidden="true"><span /></div>
-      {windowState === "closed" && <button className="reopen-terminal" type="button" onClick={() => setWindowState("open")}>$ reopen portfolio_os</button>}
+      {windowState === "closed" && (
+        <section className="terminal-fallback" aria-live="polite">
+          <p className="fallback-kicker">portfolio_os // session suspended</p>
+          <h1>Terminal window closed.</h1>
+          <p>The portfolio session is still safe. Reopen the interface to continue exploring Hammad&apos;s work, stack, and activity.</p>
+          <button className="terminal-button primary" type="button" onClick={() => setWindowState("open")}>$ reopen portfolio_os</button>
+        </section>
+      )}
       <section className={`terminal-window window-${windowState}`} aria-label="Hammad's developer portfolio terminal">
         <header className="terminal-chrome">
           <div className="window-controls" aria-label="Window controls">
@@ -305,7 +312,7 @@ export default function Home() {
               <div className="telemetry-grid">
                 <a className="telemetry-card" href="https://github.com/hammad-scripted" target="_blank" rel="noreferrer">
                   <div className="telemetry-title"><span>GITHUB / CONTRIBUTION STREAK</span><b>LIVE ↗</b></div>
-                  <img src="https://streak-stats.demolab.com?user=hammad-scripted&hide_border=true&background=090A12&ring=22C55E&fire=86EFAC&currStreakLabel=22C55E&sideLabels=A2AABD&dates=5E6678&currStreakNum=F4F7FF&sideNums=F4F7FF" alt="Hammad's live GitHub contribution streak" loading="lazy" />
+                  <img src="https://streak-stats.demolab.com?user=hammad-scripted&theme=green_nuclear&hide_border=true" alt="Hammad's live GitHub contribution streak" loading="lazy" />
                 </a>
                 <a className="telemetry-card" href="https://leetcode.com/u/hammad_codes/" target="_blank" rel="noreferrer">
                   <div className="telemetry-title"><span>LEETCODE / SOLVING STREAK</span><b>LIVE ↗</b></div>
