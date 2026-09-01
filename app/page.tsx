@@ -323,7 +323,7 @@ export default function Home() {
               <div className="telemetry-grid">
                 <a className="telemetry-card" href="https://github.com/hammad-scripted" target="_blank" rel="noreferrer">
                   <div className="telemetry-title"><span>GITHUB / CONTRIBUTION STREAK</span><b>LIVE ↗</b></div>
-                  <img src="https://streak-stats.demolab.com?user=hammad-scripted&theme=green_nuclear&hide_border=true" alt="Hammad's live GitHub contribution streak" loading="lazy" />
+                  <img src="https://streak-stats.demolab.com?user=hammad-scripted&hide_border=true&background=090A12&ring=22C55E&fire=86EFAC&currStreakLabel=22C55E&sideLabels=A2AABD&dates=5E6678&currStreakNum=F4F7FF&sideNums=F4F7FF" alt="Hammad's live GitHub contribution streak" loading="lazy" />
                 </a>
                 <a className="telemetry-card" href="https://leetcode.com/u/hammad_codes/" target="_blank" rel="noreferrer">
                   <div className="telemetry-title"><span>LEETCODE / SOLVING STREAK</span><b>LIVE ↗</b></div>
